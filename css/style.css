@@ -1,0 +1,304 @@
+@font-face {
+  font-family: 'TT Lakes';
+  src: url("./fonts/TTLakesCondensed-Light.eot");
+  src: url("./fonts/TTLakesCondensed-Light.woff") format("woff");
+  src: url("./fonts/TTLakesCondensed-Light.ttf") format("truetype");
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes';
+  src: url("../fonts/TTLakesCondensed-Regular.eot");
+  src: url("../fonts/TTLakesCondensed-Regular.woff") format("woff");
+  src: url("../fonts/TTLakesCondensed-Regular.ttf") format("truetype");
+  font-weight: regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes';
+  src: url("../fonts/TTLakesCondensed-Bold.eot");
+  src: url("../fonts/TTLakesCondensed-Bold.woff") format("woff");
+  src: url("../fonts/TTLakesCondensed-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  min-width: 320px;
+}
+
+header {
+  padding: 19px 16px;
+}
+
+header .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .menu__button-round {
+  background-color: #FF3E79;
+  margin: 0 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .menu__left-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .menu__feedback {
+  display: none;
+}
+
+header .menu__support {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-left: 30px;
+}
+
+header .menu__support::before {
+  content: "";
+  width: 2px;
+  height: 32px;
+  background-color: #EAEAEA;
+  position: relative;
+  left: -9px;
+  top: 4px;
+}
+
+.content {
+  background-color: #F8F8F8;
+}
+
+.content__content-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content__support {
+  display: none;
+}
+
+.content__title {
+  margin: 0;
+  font-family: TT Lakes;
+  font-size: 28px;
+  line-height: 40px;
+  padding-left: 16px;
+  padding-top: 24px;
+  position: relative;
+}
+
+.content__title::after {
+  content: "";
+  width: 10px;
+  height: 40px;
+  background-color: #41F6D7;
+  border-radius: 15px;
+  position: absolute;
+  left: -6px;
+  top: 24px;
+}
+
+.content__menu-list {
+  margin: 0;
+  padding: 24px 0 0 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  list-style-type: none;
+  overflow: auto;
+}
+
+.content__menu-item {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  text-align: left;
+}
+
+.content__menu-link {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: TT Lakes;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7E7E82;
+  letter-spacing: -0.2px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.content__menu-link:hover {
+  border: 2px solid #41F6D7;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.content__menu-link:active {
+  background-color: #41F6D7;
+}
+
+.content .content-article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .content-article__text {
+  width: 100%;
+  padding: 24px 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.content .content-article__paragraph {
+  margin: 0;
+  padding: 12px 0;
+  font-family: TT Lakes;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #1B1C21;
+}
+
+.content .content-article .btn-read-more {
+  padding-left: 24px;
+  font-family: TT Lakes;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+  border: none;
+  background-color: #F8F8F8;
+  outline: none;
+  position: relative;
+}
+
+.content .content-article .btn-read-more::before {
+  content: "";
+  width: 8px;
+  height: 10px;
+  background-color: #F8F8F8;
+  background-image: url("../img/icons/chevron-double-down.png");
+  position: absolute;
+  left: 5px;
+  top: 7px;
+}
+
+.content .content-article__image {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  header
+.menu__feedback {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  header
+.menu .logo {
+    padding: 0 22px;
+  }
+  header
+.menu__left-part {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header
+.menu__left-part::before {
+    content: "";
+    width: 2px;
+    height: 32px;
+    background-color: #EAEAEA;
+    position: relative;
+    left: 67px;
+    top: 0;
+  }
+  .content .content-article {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .content .content-article__text {
+    width: calc(100% - 360px - 48px);
+  }
+  .content .content-article__image {
+    width: 360px;
+    padding-top: 24px;
+  }
+}
+
+@media (min-width: 1120px) {
+  header {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

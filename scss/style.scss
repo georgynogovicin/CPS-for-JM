@@ -1,0 +1,290 @@
+//Variables
+
+$background-fill-color: #F8F8F8;
+$round-buttons-fill-color: #FF3E79;
+$decoration-elements-color: #41F6D7;
+$active-menu-items-color: #B8FFEC;
+$divider-color: #EAEAEA;
+$content-menu-item-text-color: #7E7E82;
+$content-block-text-color: #1B1C21;
+$mobile-width: 320px;
+$tablet-width: 768px;
+$content-width: 1120px;
+
+
+//Fonts
+@font-face {
+    font-family: 'TT Lakes';
+    src: url("./fonts/TTLakesCondensed-Light.eot");
+    src: url("./fonts/TTLakesCondensed-Light.woff") format("woff");
+    src: url("./fonts/TTLakesCondensed-Light.ttf") format("truetype");
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../fonts/TTLakesCondensed-Regular.eot');
+    src: url('../fonts/TTLakesCondensed-Regular.woff') format('woff');
+    src: url('../fonts/TTLakesCondensed-Regular.ttf') format('truetype');
+    font-weight: regular;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TT Lakes';
+    src: url("../fonts/TTLakesCondensed-Bold.eot");
+    src: url('../fonts/TTLakesCondensed-Bold.woff') format('woff');
+    src: url('../fonts/TTLakesCondensed-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+//Base
+body {
+    margin: 0;
+    height: 100vh;
+    min-width: 320px;
+}
+
+//Header
+header {
+    padding: 19px 16px;
+    
+    & .menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &__button-round {
+            background-color: $round-buttons-fill-color;
+            margin: 0 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &__left-part {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            
+        }
+
+        &__feedback {
+            display: none;
+        }
+
+        &__support {
+            display: flex;
+            justify-content: flex-end;
+            padding-left: 30px;
+            &::before {
+                content: "";
+                width: 2px;
+                height: 32px;
+                background-color: $divider-color;
+                position: relative;
+                left: -9px;
+                top: 4px;
+            }
+        }
+    }
+}
+
+//Main
+
+.content {
+    background-color: $background-fill-color;
+
+    &__content-header {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    &__support {
+        display: none;
+    }
+
+
+    &__title {
+        margin: 0;
+        font-family: TT Lakes;
+        font-size: 28px;
+        line-height: 40px;
+        padding-left: 16px;
+        padding-top: 24px;
+        position: relative;
+        &::after {
+            content: "";
+            width: 10px;
+            height: 40px;
+            background-color: $decoration-elements-color;
+            border-radius: 15px;
+            position: absolute;
+            left: -6px;
+            top: 24px;
+        }
+    }
+
+    &__menu-list {
+        margin: 0;
+        padding: 24px 0 0 24px;
+        display: flex;
+        justify-content: flex-start;
+        list-style-type: none;
+        overflow: auto;
+
+    }
+
+    &__menu-item {
+        margin: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        text-align: left;
+    }
+
+
+    &__menu-link {
+        padding: 8px 16px;
+        text-decoration: none;
+        font-family: TT Lakes;
+        font-size: 16px;
+        line-height: 24px;
+        color: $content-menu-item-text-color;
+        letter-spacing: -0.2px;
+        text-align: center;
+        white-space: nowrap;
+        &:hover {
+            border: 2px solid $decoration-elements-color;
+            border-radius: 6px;
+            background-color: white;
+        }
+        &:active {
+            background-color: $decoration-elements-color;
+        }
+
+    }
+
+    .content-article {
+        display: flex;
+        flex-direction: column;
+
+        &__text {
+            width: 100%;
+            padding: 24px 16px;
+            box-sizing: border-box;
+        }
+
+        &__paragraph {
+            margin: 0;
+            padding: 12px 0;
+            font-family: TT Lakes;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 0.2px;
+            color: $content-block-text-color;  
+        }
+
+        .btn-read-more {
+            padding-left: 24px;
+            font-family: TT Lakes;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+            color: $content-block-text-color;
+            border: none;
+            background-color: $background-fill-color;
+            outline: none;
+            position: relative;
+            &::before {
+                content: "";
+                width: 8px;
+                height: 10px;
+                background-color: $background-fill-color;
+                background-image: url("../img/icons/chevron-double-down.png");
+                position: absolute;
+                left: 5px;
+                top: 7px;
+            }
+        }
+
+        &__image {
+            width: 100%;
+        }
+    }
+
+
+}
+// Tablet 320px
+
+@media (min-width: $tablet-width) {
+    header
+        .menu {
+            &__feedback {
+                display: flex;
+                justify-content: flex-end;
+                flex-grow: 1;
+            }
+
+            .logo {
+                padding: 0 22px;
+            }
+
+            &__left-part {
+                justify-content: space-between;
+                &::before {
+                    content: "";
+                    width: 2px;
+                    height: 32px;
+                    background-color: $divider-color;
+                    position: relative;
+                    left: 67px;
+                    top: 0;
+                }
+            }
+        }
+    .content {
+        .content-article {
+            justify-content: space-between;
+            flex-direction: row;
+            &__text {
+                width: calc(100% - 360px - 48px);
+            }
+            &__image {
+                width: 360px;
+                padding-top: 24px;
+            }
+        }
+    }
+    
+    
+}
+
+//Desktop 1120px
+
+@media (min-width: $content-width) {
+    header {
+        display: none;
+    }
+    // .content {
+    //     .content-article {
+    //         &__image {
+    //             width: 531px;
+    //         }
+    //     }
+    //     &__header {
+    //         display: flex;
+    //         justify-content: space-between;
+    //     }
+    //     &__support {
+    //         display: flex;
+    //     }
+    // }
+}
+
