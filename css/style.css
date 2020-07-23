@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'TT Lakes';
   src: url("./fonts/TTLakesCondensed-Light.eot");
@@ -39,8 +40,9 @@ header .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -48,7 +50,7 @@ header .menu {
 
 header .menu__button-round {
   background-color: #FF3E79;
-  margin: 0 10px;
+  margin: 0 5px;
   width: 40px;
   height: 40px;
   border-radius: 20px;
@@ -61,6 +63,7 @@ header .menu__button-round {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 header .menu__left-part {
@@ -75,6 +78,10 @@ header .menu__left-part {
           align-items: center;
 }
 
+header .menu__left-part .logo {
+  padding-left: 10px;
+}
+
 header .menu__feedback {
   display: none;
 }
@@ -86,7 +93,6 @@ header .menu__support {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-left: 30px;
 }
 
 header .menu__support::before {
@@ -101,6 +107,7 @@ header .menu__support::before {
 
 .content {
   background-color: #F8F8F8;
+  padding-top: 24px;
 }
 
 .content__content-header {
@@ -120,12 +127,10 @@ header .menu__support::before {
 }
 
 .content__title {
-  margin: 0;
+  margin: 0 0 0 16px;
   font-family: TT Lakes;
   font-size: 28px;
   line-height: 40px;
-  padding-left: 16px;
-  padding-top: 24px;
   position: relative;
 }
 
@@ -136,8 +141,8 @@ header .menu__support::before {
   background-color: #41F6D7;
   border-radius: 15px;
   position: absolute;
-  left: -6px;
-  top: 24px;
+  left: -21px;
+  top: 0px;
 }
 
 .content__menu-list {
@@ -241,8 +246,9 @@ header .menu__support::before {
   top: 7px;
 }
 
-.content .content-article__image {
+.content .content-article img {
   width: 100%;
+  height: auto;
 }
 
 @media (min-width: 768px) {
@@ -257,6 +263,7 @@ header .menu__support::before {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    padding-right: 20px;
   }
   header
 .menu .logo {
@@ -275,7 +282,7 @@ header .menu__support::before {
     height: 32px;
     background-color: #EAEAEA;
     position: relative;
-    left: 67px;
+    left: 60px;
     top: 0;
   }
   .content .content-article {
@@ -291,14 +298,55 @@ header .menu__support::before {
     width: calc(100% - 360px - 48px);
   }
   .content .content-article__image {
-    width: 360px;
     padding-top: 24px;
+  }
+  .content .content-article__image img {
+    width: 360px;
   }
 }
 
 @media (min-width: 1120px) {
   header {
+    position: absolute;
+    top: -87px;
+  }
+  header .menu__support {
+    position: absolute;
+    top: 112px;
+    right: -1000px;
+    width: 220px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header .menu__support::before {
     display: none;
+  }
+  header .menu__support .menu__button-round:first-child::before {
+    content: "Оставить заявку";
+    font-family: TT Lakes;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    position: absolute;
+    left: -113px;
+  }
+  header .menu__support .menu__button-round:last-child::before {
+    content: "Статус ремонта";
+    font-family: TT Lakes;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    position: absolute;
+    left: 65px;
+  }
+  .content {
+    width: 100%;
+  }
+  .content .content-article__image img {
+    width: 532px;
   }
 }
 /*# sourceMappingURL=style.css.map */
