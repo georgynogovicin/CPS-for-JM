@@ -9,7 +9,7 @@ $content-menu-item-text-color: #7E7E82;
 $content-block-text-color: #1B1C21;
 $mobile-width: 320px;
 $tablet-width: 768px;
-$content-width: 1120px;
+$content-width: 1220px;
 
 
 //Fonts
@@ -52,9 +52,14 @@ header {
     padding: 19px 16px;
     
     & .menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        &__list {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         &__button-round {
             background-color: $round-buttons-fill-color;
             margin: 0 5px;
@@ -67,6 +72,7 @@ header {
             cursor: pointer;
         }
         &__left-part {
+            padding: inherit;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -81,6 +87,7 @@ header {
         }
 
         &__support {
+            padding: inherit;
             display: flex;
             justify-content: flex-end;
             &::before {
@@ -89,7 +96,7 @@ header {
                 height: 32px;
                 background-color: $divider-color;
                 position: relative;
-                left: -9px;
+                left: -10px;
                 top: 4px;
             }
         }
@@ -122,15 +129,16 @@ header {
         position: relative;
         &::after {
             content: "";
-            width: 10px;
+            width: 5px;
             height: 40px;
             background-color: $decoration-elements-color;
-            border-radius: 15px;
+            border-radius: 0 15px 15px 0;
             position: absolute;
             left: -21px;
             top: 0px;
         }
     }
+    
 
     &__menu-list {
         margin: 0;
@@ -181,6 +189,11 @@ header {
             width: 100%;
             padding: 24px 16px;
             box-sizing: border-box;
+        }
+
+        &__wrapper {
+            max-height: 4em;
+            overflow: hidden;
         }
 
         &__paragraph {
@@ -260,6 +273,12 @@ header {
             &__text {
                 width: calc(100% - 360px - 48px);
             }
+
+            &__wrapper {
+                max-height: 8em;
+                overflow: hidden;
+            }
+            
             &__image {
                 padding-top: 24px;
                 & img {
@@ -272,18 +291,34 @@ header {
     
 }
 
-//Desktop 1120px
+//Desktop 1220px
 
 @media (min-width: $content-width) {
+    .container {
+        max-width: $content-width;
+        margin: 0 auto;
+        position: relative;
+    }
     header {
-        position: absolute;
-        top: -87px;
+        padding: 0;
+           
 
         & .menu {
+            &__list {
+                position: absolute;
+                top: 18px;
+            }
+            &__left-part {
+                display: none;
+            }
+
+            &__feedback {
+                display: none;
+            }
             &__support {
                 position: absolute;
-                top: 112px;
-                right: -1000px;
+                left: 1000px;
+                top: 6px;
                 width: 220px;
                 justify-content: space-between;
                 &::before {
@@ -309,6 +344,7 @@ header {
                     position: absolute;
                     left: 65px;
                 }
+
             }
         }
 
@@ -324,6 +360,6 @@ header {
             }
         }
     }
-    
-}
+}      
+
 

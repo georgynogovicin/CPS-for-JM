@@ -36,7 +36,9 @@ header {
   padding: 19px 16px;
 }
 
-header .menu {
+header .menu__list {
+  margin: 0;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,6 +69,7 @@ header .menu__button-round {
 }
 
 header .menu__left-part {
+  padding: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,6 +90,7 @@ header .menu__feedback {
 }
 
 header .menu__support {
+  padding: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,7 +105,7 @@ header .menu__support::before {
   height: 32px;
   background-color: #EAEAEA;
   position: relative;
-  left: -9px;
+  left: -10px;
   top: 4px;
 }
 
@@ -136,10 +140,10 @@ header .menu__support::before {
 
 .content__title::after {
   content: "";
-  width: 10px;
+  width: 5px;
   height: 40px;
   background-color: #41F6D7;
-  border-radius: 15px;
+  border-radius: 0 15px 15px 0;
   position: absolute;
   left: -21px;
   top: 0px;
@@ -210,6 +214,11 @@ header .menu__support::before {
   padding: 24px 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.content .content-article__wrapper {
+  max-height: 4em;
+  overflow: hidden;
 }
 
 .content .content-article__paragraph {
@@ -297,6 +306,10 @@ header .menu__support::before {
   .content .content-article__text {
     width: calc(100% - 360px - 48px);
   }
+  .content .content-article__wrapper {
+    max-height: 8em;
+    overflow: hidden;
+  }
   .content .content-article__image {
     padding-top: 24px;
   }
@@ -305,15 +318,29 @@ header .menu__support::before {
   }
 }
 
-@media (min-width: 1120px) {
+@media (min-width: 1220px) {
+  .container {
+    max-width: 1220px;
+    margin: 0 auto;
+    position: relative;
+  }
   header {
+    padding: 0;
+  }
+  header .menu__list {
     position: absolute;
-    top: -87px;
+    top: 18px;
+  }
+  header .menu__left-part {
+    display: none;
+  }
+  header .menu__feedback {
+    display: none;
   }
   header .menu__support {
     position: absolute;
-    top: 112px;
-    right: -1000px;
+    left: 1000px;
+    top: 6px;
     width: 220px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
