@@ -47,62 +47,66 @@ body {
     min-width: 320px;
 }
 
+
 //Header
 header {
     padding: 19px 16px;
-    
-    & .menu {
-        &__list {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        &__button-round {
-            background-color: $round-buttons-fill-color;
-            margin: 0 5px;
-            width: 40px;
-            height: 40px;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-        &__left-part {
-            padding: inherit;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            & .logo {
-                padding-left: 10px;
-            }
-            
-        }
-
-        &__feedback {
-            display: none;
-        }
-
-        &__support {
-            padding: inherit;
-            display: flex;
-            justify-content: flex-end;
-            &::before {
-                content: "";
-                width: 2px;
-                height: 32px;
-                background-color: $divider-color;
-                position: relative;
-                left: -10px;
-                top: 4px;
-            }
-        }
     }
-}
+.menu {
+   &__list {
+       margin: 0;
+       padding: 0;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       list-style-type: none;
+   }
 
+   &__button-round {
+       background-color: $round-buttons-fill-color;
+       margin: 0 5px;
+       width: 40px;
+       height: 40px;
+       border-radius: 20px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       cursor: pointer;
+       &:hover {
+           transition-duration: 300ms;
+           filter: hue-rotate(45deg) drop-shadow(0 0 0.75rem $round-buttons-fill-color);
+       }
+   }
+   &__left-part {
+       padding: inherit;
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+       & .logo {
+           padding-left: 10px;
+       }
+       
+   }
+
+   &__feedback {
+       display: none;
+   }
+
+   &__support {
+       padding: inherit;
+       display: flex;
+       justify-content: flex-end;
+       &::before {
+           content: "";
+           width: 2px;
+           height: 32px;
+           background-color: $divider-color;
+           position: relative;
+           left: -10px;
+           top: 4px;
+       }
+   }
+}
 //Main
 
 .content {
@@ -152,6 +156,7 @@ header {
 
     &__menu-item {
         margin: 0;
+        padding: 0 24px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -161,6 +166,8 @@ header {
 
 
     &__menu-link {
+        display: block;
+        box-sizing: border-box;
         padding: 8px 16px;
         text-decoration: none;
         font-family: TT Lakes;
@@ -170,6 +177,7 @@ header {
         letter-spacing: -0.2px;
         text-align: center;
         white-space: nowrap;
+        border: 2px solid transparent;
         &:hover {
             border: 2px solid $decoration-elements-color;
             border-radius: 6px;
@@ -180,63 +188,115 @@ header {
         }
 
     }
+}
 
-    .content-article {
-        display: flex;
-        flex-direction: column;
+.article {
+    display: flex;
+    flex-direction: column;
 
-        &__text {
-            width: 100%;
-            padding: 24px 16px;
-            box-sizing: border-box;
-        }
-
-        &__wrapper {
-            max-height: 4em;
-            overflow: hidden;
-        }
-
-        &__paragraph {
-            margin: 0;
-            padding: 12px 0;
-            font-family: TT Lakes;
-            font-size: 14px;
-            line-height: 18px;
-            letter-spacing: 0.2px;
-            color: $content-block-text-color;  
-        }
-
-        .btn-read-more {
-            padding-left: 24px;
-            font-family: TT Lakes;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: -0.2px;
-            color: $content-block-text-color;
-            border: none;
-            background-color: $background-fill-color;
-            outline: none;
-            position: relative;
-            &::before {
-                content: "";
-                width: 8px;
-                height: 10px;
-                background-color: $background-fill-color;
-                background-image: url("../img/icons/chevron-double-down.png");
-                position: absolute;
-                left: 5px;
-                top: 7px;
-            }
-        }
-
-        & img {
-            width: 100%;
-            height: auto;
-        }
+    &__text {
+        width: 100%;
+        padding: 24px 16px;
+        box-sizing: border-box;
     }
 
+    &__wrapper {
+        max-height: 4em;
+        overflow: hidden;
+    }
 
+    &__paragraph {
+        margin: 0;
+        padding: 12px 0;
+        font-family: TT Lakes;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+        color: $content-block-text-color;  
+    }
+
+    & img {
+        width: 100%;
+        height: auto;
+    }
 }
+
+.btn-read-more {
+    padding-left: 24px;
+    font-family: TT Lakes;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $content-block-text-color;
+    border: none;
+    background-color: $background-fill-color;
+    outline: none;
+    position: relative;
+    &::before {
+        content: "";
+        width: 8px;
+        height: 10px;
+        background-color: $background-fill-color;
+        background-image: url("../img/icons/chevron-double-down.png");
+        position: absolute;
+        left: 5px;
+        top: 7px;
+    }
+}
+
+//Mobile menu
+.mobile {
+    background-color: white;
+    &__search {
+        padding: inherit;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__menu-list {
+        margin: 0;
+        list-style-type: none;
+        padding: 0;
+        
+    }
+    &__menu-item {
+        position: relative;
+    }
+    &__menu-link {
+        display: block;
+        text-decoration: none;
+        padding: 24px 24px;
+        font-family: TT Lakes;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: #1B1C21;
+
+        &:hover {
+            color: #7E7E82;
+            transition-duration: 200ms;
+        }
+        &:hover::before {
+            transition-duration: 200ms;
+            content: "";
+            width: 5px;
+            height: 40px;
+            background-color: $decoration-elements-color;
+            border-radius: 0 15px 15px 0;
+            position: absolute;
+            left: 0px;
+            top: 12px;
+        }
+    }
+    .menu__feedback {
+        display: flex;
+        justify-content: flex-start;
+        padding-inline-start: 24px;
+        .menu__button-round {
+             margin-right: 20px;
+        }
+    }
+}
+
 // Tablet 320px
 
 @media (min-width: $tablet-width) {
@@ -267,7 +327,8 @@ header {
             }
         }
     .content {
-        .content-article {
+        
+        .article {
             justify-content: space-between;
             flex-direction: row;
             &__text {
@@ -352,7 +413,10 @@ header {
     }
     .content {
         width: 100%;
-        .content-article {
+        &__menu-list {
+            flex-wrap: wrap;
+        }
+        .article {
             &__image {
                 & img {
                     width: 532px;
