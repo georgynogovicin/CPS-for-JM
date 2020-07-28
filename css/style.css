@@ -342,6 +342,50 @@ header {
   margin-right: 20px;
 }
 
+.contacts {
+  padding: 17px 24px;
+}
+
+.contacts__mail-to {
+  display: block;
+  font-family: TT Lakes;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+  text-decoration: none;
+}
+
+.contacts__call-to {
+  display: block;
+  font-family: TT Lakes;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  color: #1B1C21;
+  text-decoration: none;
+}
+
+.choose-lang {
+  margin-top: 41px;
+  padding-left: 24px;
+}
+
+.choose-lang__btn {
+  border: none;
+  background-color: inherit;
+  font-family: TT Lakes;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+  text-transform: uppercase;
+}
+
+.choose-lang__btn:hover {
+  color: #7E7E82;
+}
+
 @media (min-width: 768px) {
   header
 .menu__feedback {
