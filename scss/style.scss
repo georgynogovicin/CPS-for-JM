@@ -247,6 +247,7 @@ header {
 //Mobile menu
 .mobile {
     background-color: white;
+    max-width: 360px;
     &__search {
         padding: inherit;
         display: flex;
@@ -341,6 +342,14 @@ header {
 // Tablet 320px
 
 @media (min-width: $tablet-width) {
+    .mobile {
+        .menu__left-part {
+            &::before {
+                display: none;
+            }
+        }
+    }
+    
     header
         .menu {
             &__feedback {
@@ -400,6 +409,14 @@ header {
         max-width: $content-width;
         margin: 0 auto;
         position: relative;
+    }
+    .mobile {
+        .menu__list {
+            position: inherit;
+        }
+        .menu__left-part {
+            display: inherit;
+        }
     }
     header {
         padding: 0;

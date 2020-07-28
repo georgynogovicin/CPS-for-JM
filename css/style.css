@@ -275,6 +275,7 @@ header {
 
 .mobile {
   background-color: white;
+  max-width: 360px;
 }
 
 .mobile__search {
@@ -387,6 +388,9 @@ header {
 }
 
 @media (min-width: 768px) {
+  .mobile .menu__left-part::before {
+    display: none;
+  }
   header
 .menu__feedback {
     display: -webkit-box;
@@ -449,6 +453,12 @@ header {
     max-width: 1220px;
     margin: 0 auto;
     position: relative;
+  }
+  .mobile .menu__list {
+    position: inherit;
+  }
+  .mobile .menu__left-part {
+    display: inherit;
   }
   header {
     padding: 0;
