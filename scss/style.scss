@@ -7,7 +7,7 @@ $active-menu-items-color: #B8FFEC;
 $divider-color: #EAEAEA;
 $content-menu-item-text-color: #7E7E82;
 $content-block-text-color: #1B1C21;
-$mobile-width: 320px;
+$menu-width: 320px;
 $tablet-width: 768px;
 $content-width: 1220px;
 $link-color: #1B1C21;
@@ -54,7 +54,7 @@ body {
 header {
     padding: 19px 16px;
     }
-.menu {
+.header-menu {
    &__list {
        margin: 0;
        padding: 0;
@@ -246,11 +246,12 @@ header {
     }
 }
 
-//Mobile menu
-.mobile {
+//Menu 320px
+.menu {
     box-sizing: border-box;
     background-color: white;
     max-width: 320px;
+    height: 100vh;
     padding: 24px 16px;
     &__header {
         display: flex;
@@ -273,15 +274,15 @@ header {
     &__menu-list {
         margin: 0;
         padding: 0;
-        list-style-type: none;
     }
     &__menu-item {
         position: relative;
+        list-style-type: none;
     }
     &__menu-link {
         display: block;
         text-decoration: none;
-        padding: 14px 0;
+        padding: 20px 0;
         font-family: TT Lakes;
         font-size: 16px;
         line-height: 24px;
@@ -303,36 +304,18 @@ header {
             top: 8px;
         }
     }
-    .menu__feedback {
+    .header-menu__feedback {
         margin-top: 24px;
         display: flex;
         justify-content: flex-start;
         padding-inline-start: 0;
-        .menu__button-round { 
+        .header-menu__button-round { 
             margin-right: 10px;
         }
     }
-    
-}
-
-.red-round-button {
-    background-color: $round-buttons-fill-color;
-    border: none;
-    outline: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    &:hover {
-        transition-duration: 300ms;
-        filter: hue-rotate(45deg) drop-shadow(0 0 0.75rem $round-buttons-fill-color);
+    &__contacts {
+        padding: 17px 0;
     }
-}
-.contacts {
-    padding: 17px 0;
     &__mail-to {
         display: block;
         font-family: TT Lakes;
@@ -355,31 +338,53 @@ header {
     & a:hover {
         color: $hover-link-color;
     }
-}
-.choose-lang {
-   padding: 0; 
-   list-style-type: none;
-   display: flex;
-   justify-content: space-between;
-   width: 90px;
-   &__item a {
-        text-decoration: none;
-        color: $content-block-text-color;
-        font-family: TT Lakes;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.2px;
-        &:hover {
-            color: $hover-link-color;
-        }
-   }
 
+    &__lang-list {
+        padding: 0; 
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        width: 90px;
+        & a {
+             text-decoration: none;
+             color: $content-block-text-color;
+             font-family: TT Lakes;
+             font-size: 16px;
+             line-height: 24px;
+             letter-spacing: -0.2px;
+             &:hover {
+                 color: $hover-link-color;
+             }
+        }
+     
+     }
+    
+    
 }
+
+.red-round-button {
+    background-color: $round-buttons-fill-color;
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        transition-duration: 300ms;
+        filter: hue-rotate(45deg) drop-shadow(0 0 0.75rem $round-buttons-fill-color);
+    }
+}
+
+
 
 // Tablet 320px
 
 @media (min-width: $tablet-width) {
-    .mobile {
+    .menu {
         .menu__left-part {
             &::before {
                 display: none;
@@ -388,7 +393,7 @@ header {
     }
     
     header
-        .menu {
+        .header-menu {
             &__feedback {
                 display: flex;
                 justify-content: flex-end;
@@ -447,7 +452,7 @@ header {
         margin: 0 auto;
         position: relative;
     }
-    .mobile {
+    .menu {
         .menu__list {
             position: inherit;
         }
@@ -459,7 +464,7 @@ header {
         padding: 0;
            
 
-        & .menu {
+        & .header-menu {
             &__list {
                 position: absolute;
                 top: 18px;
@@ -480,7 +485,7 @@ header {
                 &::before {
                     display: none;
                 }
-                .menu__button-round:first-child::before {
+                .header-menu__button-round:first-child::before {
                     content: "Оставить заявку";
                     font-family: TT Lakes;
                     font-size: 16px;
@@ -490,7 +495,7 @@ header {
                     position: absolute;
                     left: -113px;
                 }
-                .menu__button-round:last-child::before {
+                .header-menu__button-round:last-child::before {
                     content: "Статус ремонта";
                     font-family: TT Lakes;
                     font-size: 16px;

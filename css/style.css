@@ -36,7 +36,7 @@ header {
   padding: 19px 16px;
 }
 
-.menu__list {
+.header-menu__list {
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -51,7 +51,7 @@ header {
   list-style-type: none;
 }
 
-.menu__button-round {
+.header-menu__button-round {
   background-color: #FF3E79;
   margin: 0 5px;
   width: 40px;
@@ -69,14 +69,14 @@ header {
   cursor: pointer;
 }
 
-.menu__button-round:hover {
+.header-menu__button-round:hover {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
   -webkit-filter: hue-rotate(45deg) drop-shadow(0 0 0.75rem #FF3E79);
           filter: hue-rotate(45deg) drop-shadow(0 0 0.75rem #FF3E79);
 }
 
-.menu__left-part {
+.header-menu__left-part {
   padding: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -89,15 +89,15 @@ header {
           align-items: center;
 }
 
-.menu__left-part .logo {
+.header-menu__left-part .logo {
   padding-left: 10px;
 }
 
-.menu__feedback {
+.header-menu__feedback {
   display: none;
 }
 
-.menu__support {
+.header-menu__support {
   padding: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -107,7 +107,7 @@ header {
           justify-content: flex-end;
 }
 
-.menu__support::before {
+.header-menu__support::before {
   content: "";
   width: 2px;
   height: 32px;
@@ -273,15 +273,16 @@ header {
   top: 7px;
 }
 
-.mobile {
+.menu {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: white;
   max-width: 320px;
+  height: 100vh;
   padding: 24px 16px;
 }
 
-.mobile__header {
+.menu__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -297,7 +298,7 @@ header {
           justify-content: space-between;
 }
 
-.mobile__close {
+.menu__close {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -311,7 +312,7 @@ header {
       flex-basis: 160px;
 }
 
-.mobile__search {
+.menu__search {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -322,20 +323,20 @@ header {
       flex-basis: 160px;
 }
 
-.mobile__menu-list {
+.menu__menu-list {
   margin: 0;
   padding: 0;
+}
+
+.menu__menu-item {
+  position: relative;
   list-style-type: none;
 }
 
-.mobile__menu-item {
-  position: relative;
-}
-
-.mobile__menu-link {
+.menu__menu-link {
   display: block;
   text-decoration: none;
-  padding: 14px 0;
+  padding: 20px 0;
   font-family: TT Lakes;
   font-size: 16px;
   line-height: 24px;
@@ -343,13 +344,13 @@ header {
   color: #1B1C21;
 }
 
-.mobile__menu-link:hover {
+.menu__menu-link:hover {
   color: #7E7E82;
   -webkit-transition-duration: 200ms;
           transition-duration: 200ms;
 }
 
-.mobile__menu-link:hover::before {
+.menu__menu-link:hover::before {
   -webkit-transition-duration: 200ms;
           transition-duration: 200ms;
   content: "";
@@ -362,7 +363,7 @@ header {
   top: 8px;
 }
 
-.mobile .menu__feedback {
+.menu .header-menu__feedback {
   margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -374,8 +375,62 @@ header {
           padding-inline-start: 0;
 }
 
-.mobile .menu__feedback .menu__button-round {
+.menu .header-menu__feedback .header-menu__button-round {
   margin-right: 10px;
+}
+
+.menu__contacts {
+  padding: 17px 0;
+}
+
+.menu__mail-to {
+  display: block;
+  font-family: TT Lakes;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+  text-decoration: none;
+  padding-bottom: 18px;
+}
+
+.menu__call-to {
+  display: block;
+  font-family: TT Lakes;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  color: #1B1C21;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #7E7E82;
+}
+
+.menu__lang-list {
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90px;
+}
+
+.menu__lang-list a {
+  text-decoration: none;
+  color: #1B1C21;
+  font-family: TT Lakes;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.menu__lang-list a:hover {
+  color: #7E7E82;
 }
 
 .red-round-button {
@@ -404,66 +459,12 @@ header {
           filter: hue-rotate(45deg) drop-shadow(0 0 0.75rem #FF3E79);
 }
 
-.contacts {
-  padding: 17px 0;
-}
-
-.contacts__mail-to {
-  display: block;
-  font-family: TT Lakes;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  color: #1B1C21;
-  text-decoration: none;
-  padding-bottom: 18px;
-}
-
-.contacts__call-to {
-  display: block;
-  font-family: TT Lakes;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: -0.6px;
-  color: #1B1C21;
-  text-decoration: none;
-}
-
-.contacts a:hover {
-  color: #7E7E82;
-}
-
-.choose-lang {
-  padding: 0;
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 90px;
-}
-
-.choose-lang__item a {
-  text-decoration: none;
-  color: #1B1C21;
-  font-family: TT Lakes;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-}
-
-.choose-lang__item a:hover {
-  color: #7E7E82;
-}
-
 @media (min-width: 768px) {
-  .mobile .menu__left-part::before {
+  .menu .menu__left-part::before {
     display: none;
   }
   header
-.menu__feedback {
+.header-menu__feedback {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -476,17 +477,17 @@ header {
     padding-right: 20px;
   }
   header
-.menu .logo {
+.header-menu .logo {
     padding: 0 22px;
   }
   header
-.menu__left-part {
+.header-menu__left-part {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
   header
-.menu__left-part::before {
+.header-menu__left-part::before {
     content: "";
     width: 2px;
     height: 32px;
@@ -525,26 +526,26 @@ header {
     margin: 0 auto;
     position: relative;
   }
-  .mobile .menu__list {
+  .menu .menu__list {
     position: inherit;
   }
-  .mobile .menu__left-part {
+  .menu .menu__left-part {
     display: inherit;
   }
   header {
     padding: 0;
   }
-  header .menu__list {
+  header .header-menu__list {
     position: absolute;
     top: 18px;
   }
-  header .menu__left-part {
+  header .header-menu__left-part {
     display: none;
   }
-  header .menu__feedback {
+  header .header-menu__feedback {
     display: none;
   }
-  header .menu__support {
+  header .header-menu__support {
     position: absolute;
     left: 1000px;
     top: 6px;
@@ -553,10 +554,10 @@ header {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  header .menu__support::before {
+  header .header-menu__support::before {
     display: none;
   }
-  header .menu__support .menu__button-round:first-child::before {
+  header .header-menu__support .header-menu__button-round:first-child::before {
     content: "Оставить заявку";
     font-family: TT Lakes;
     font-size: 16px;
@@ -566,7 +567,7 @@ header {
     position: absolute;
     left: -113px;
   }
-  header .menu__support .menu__button-round:last-child::before {
+  header .header-menu__support .header-menu__button-round:last-child::before {
     content: "Статус ремонта";
     font-family: TT Lakes;
     font-size: 16px;
