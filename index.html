@@ -43,11 +43,11 @@
             </nav>
             <article class="article">
                 <div class="article__text">
-                    <div class="article__wrapper">
+                    <div class="article__wrapper" id="article-wrapper">
                         <p class="article__paragraph">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
                         <p class="article__paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
                     </div>
-                    <button type="button" class="btn-read-more">Читать далее</button>
+                    <button type="button" class="btn-read-more" id="article-expander">Читать далее</button>
                 </div>
                 <div class="article__image">
                     <picture>
@@ -57,63 +57,63 @@
                     </picture>
                 </div>
             </article>
-            <section class="services">
-                <div class="services__header">
-                    <h1 class="services__title">Ремонт техники различных брендов</h1>
+            <section class="section">
+                <div class="section__header">
+                    <h1 class="section__title">Ремонт техники различных брендов</h1>
                 </div>
-                <div class="swiper-container services__container">
-                    <div class="swiper-wrapper services__list">
-                    <div class="swiper-slide services__item">
+                <div class="swiper-container section__container">
+                    <div class="swiper-wrapper section__list" id="section-wrapper">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/samsung.png" alt="Samsung" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/sony.svg" alt="Sony" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/viewsonic.png" alt="ViewSonic" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/hp.png" alt="HP" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/lenovo.png" alt="Lenovo" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/acer.png" alt="Acer" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/apple.png" alt="Apple" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/bosh.png" alt="Bosh" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/bosh.png" alt="Bosh" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/bosh.png" alt="Bosh" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/bosh.png" alt="Bosh" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
-                    <div class="swiper-slide services__item">
+                    <div class="swiper-slide section__item">
                         <div class="logo"><a href="#" class="logo__link"><img src="img/icons/bosh.png" alt="Bosh" class="logo__img"></a></div>
                         <button class="white-round-button"><img src="./img/icons/chevron-single-right.png" alt="Открыть"></button>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
-                <button type="button" class="btn-read-more services">Показать все</button>
+                <button type="button" class="btn-read-more section" id="section-expander">Показать все</button>
                 </div>
                 
             </section>

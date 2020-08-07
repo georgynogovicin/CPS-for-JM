@@ -12,9 +12,9 @@ $tablet-width: 768px;
 $content-width: 1220px;
 $link-color: #1B1C21;
 $hover-link-color: #7E7E82;
-$services-item-border-color: #EAEAEA;
-$services-background-fill-color: #F2F2F2;
-$services-item-text-color: #7E7E82;
+$section-item-border-color: #EAEAEA;
+$section-background-fill-color: #F2F2F2;
+$section-item-text-color: #7E7E82;
 
 
 //Fonts
@@ -160,8 +160,7 @@ header {
     }
 
     &__menu-item {
-        margin: 0;
-        padding: 0 24px;
+        margin: 0 24px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -208,6 +207,11 @@ header {
     &__wrapper {
         max-height: 4em;
         overflow: hidden;
+        transition-duration: 400ms;
+        &--expanded {
+            transition-duration: 400ms;
+            max-height: 16em;
+        }
     }
 
     &__paragraph {
@@ -255,6 +259,10 @@ header {
         border: 2px solid $decoration-elements-color;
         border-radius: 6px;
         background-color: white;
+        
+    }
+    &--active::before {
+        background-image: url("../img/icons/chevron-double-up.png");
         
     }
 }
@@ -395,7 +403,7 @@ header {
 
 
 
-//Services
+//section
 .white-round-button {
     background-color: white;
     border: 2px solid $round-buttons-fill-color;
@@ -412,11 +420,14 @@ header {
         filter: hue-rotate(45deg) drop-shadow(0 0 0.75rem $round-buttons-fill-color);
     }
 }
-.services {
+.section {
     &__header {
         background: linear-gradient(90deg, #F8F8F8 1.39%, #FFFFFF 100%);;
         padding: 16px;
         
+    }
+    &__list {
+        transition-duration: 300ms;
     }
     &__title {
         font-family: TT Lakes;
@@ -424,7 +435,7 @@ header {
         line-height: 24px;
         letter-spacing: -0.2px;
         text-transform: uppercase;
-        color: $services-item-text-color;
+        color: $section-item-text-color;
         font-weight: 200;
     }
     &__item {
@@ -434,7 +445,7 @@ header {
         justify-content: space-between;
         flex-direction: row;
         background-color: white;
-        border: 1px solid $services-item-border-color;
+        border: 1px solid $section-item-border-color;
         border-radius: 5%;
         padding: 10px 20px;
         width: 224px;
@@ -508,7 +519,12 @@ header {
             &__wrapper {
                 max-height: 8em;
                 overflow: hidden;
+                &--expanded {
+                    transition-duration: 400ms;
+                    max-height: 16em;
+                }
             }
+            
             
             &__image {
                 padding-top: 24px;
@@ -518,19 +534,23 @@ header {
             }
         }
     }
-    .services {
+    .section {
         &__container {
             height: 100%;
             margin: 0 auto;
         }
         &__list {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             flex-wrap: wrap;
             box-sizing: content-box;
             height: 180px;
             align-content: flex-start;
             overflow: hidden;
+            &--expanded {
+                transition-duration: 300ms;
+                height: 350px;
+            }
         }
         &__item {
             margin: 8px 12px;
@@ -539,6 +559,9 @@ header {
         .btn-read-more {
             margin: 24px 32px;
         }
+    }
+    .swiper-pagination {
+        display: none;
     }
          
         
@@ -624,6 +647,16 @@ header {
                 & img {
                     width: 532px;
                 }
+            }
+        }
+    }
+
+    .section {
+        &__list {
+            transition-duration: 300ms;
+            &--expanded {
+                transition-duration: 300ms;
+                height: 280px;
             }
         }
     }

@@ -171,8 +171,7 @@ header {
 }
 
 .content__menu-item {
-  margin: 0;
-  padding: 0 24px;
+  margin: 0 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,6 +231,14 @@ header {
 .article__wrapper {
   max-height: 4em;
   overflow: hidden;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+}
+
+.article__wrapper--expanded {
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  max-height: 16em;
 }
 
 .article__paragraph {
@@ -281,6 +288,10 @@ header {
   border: 2px solid #41F6D7;
   border-radius: 6px;
   background-color: white;
+}
+
+.btn-read-more--active::before {
+  background-image: url("../img/icons/chevron-double-up.png");
 }
 
 .menu {
@@ -495,13 +506,18 @@ header {
           filter: hue-rotate(45deg) drop-shadow(0 0 0.75rem #FF3E79);
 }
 
-.services__header {
+.section__header {
   background: -webkit-gradient(linear, left top, right top, color-stop(1.39%, #F8F8F8), to(#FFFFFF));
   background: linear-gradient(90deg, #F8F8F8 1.39%, #FFFFFF 100%);
   padding: 16px;
 }
 
-.services__title {
+.section__list {
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.section__title {
   font-family: TT Lakes;
   font-size: 16px;
   line-height: 24px;
@@ -511,7 +527,7 @@ header {
   font-weight: 200;
 }
 
-.services__item {
+.section__item {
   margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -536,7 +552,7 @@ header {
           box-sizing: border-box;
 }
 
-.services__item:hover {
+.section__item:hover {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
   -webkit-filter: drop-shadow(0 0 0.75rem #FF3E79);
@@ -602,22 +618,28 @@ header {
     max-height: 8em;
     overflow: hidden;
   }
+  .content .article__wrapper--expanded {
+    -webkit-transition-duration: 400ms;
+            transition-duration: 400ms;
+    max-height: 16em;
+  }
   .content .article__image {
     padding-top: 24px;
   }
   .content .article__image img {
     width: 360px;
   }
-  .services__container {
+  .section__container {
     height: 100%;
     margin: 0 auto;
   }
-  .services__list {
+  .section__list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-sizing: content-box;
@@ -627,12 +649,20 @@ header {
         align-content: flex-start;
     overflow: hidden;
   }
-  .services__item {
+  .section__list--expanded {
+    -webkit-transition-duration: 300ms;
+            transition-duration: 300ms;
+    height: 350px;
+  }
+  .section__item {
     margin: 8px 12px;
     z-index: 2;
   }
-  .services .btn-read-more {
+  .section .btn-read-more {
     margin: 24px 32px;
+  }
+  .swiper-pagination {
+    display: none;
   }
 }
 
@@ -702,6 +732,15 @@ header {
   }
   .content .article__image img {
     width: 532px;
+  }
+  .section__list {
+    -webkit-transition-duration: 300ms;
+            transition-duration: 300ms;
+  }
+  .section__list--expanded {
+    -webkit-transition-duration: 300ms;
+            transition-duration: 300ms;
+    height: 280px;
   }
 }
 /*# sourceMappingURL=style.css.map */
